@@ -7,11 +7,11 @@ Run PlantUML in a Docker container. For use as part of your build pipeline.
 Where all PlantUML files exist in the `path-to-mount` folder and have the extension .puml:
 
 ```
-docker run -v path-to-mount:/source --rm -i [PublishedImage]  source/*.puml -o ./output
+docker run -v path-to-mount:/source --rm -i robbell/plantuml-docker source/*.puml -o ./output
 ```
 
 ## Single file
 
 ```
-cat sample.puml | docker run --rm -i [PublishedImage] > output.png
+cat sample.puml | docker run --rm -i robbell/plantuml-docker > output.png
 ```
