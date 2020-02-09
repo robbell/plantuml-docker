@@ -2,7 +2,11 @@
 
 Run PlantUML in a Docker container. For use as part of your build pipeline.
 
-## Multiple files by wildcard
+![Docker Build Status](https://img.shields.io/docker/cloud/build/robbell/plantuml-docker?style=for-the-badge)
+
+## Usage
+
+### Multiple files by wildcard
 
 Where all PlantUML files exist in the `path-to-mount` folder and have the extension .puml:
 
@@ -10,7 +14,7 @@ Where all PlantUML files exist in the `path-to-mount` folder and have the extens
 docker run -v path-to-mount:/source --rm -i robbell/plantuml-docker source/*.puml -o ./output
 ```
 
-## Single file
+### Single file
 
 ```
 cat sample.puml | docker run --rm -i robbell/plantuml-docker > output.png
