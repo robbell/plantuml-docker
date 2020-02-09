@@ -1,6 +1,6 @@
 # PlantUML in Docker
 
-Run PlantUML in a Docker container as part of your build pipeline.
+Run PlantUML in a Docker container. For use as part of your build pipeline.
 
 ## Multiple files by wildcard
 
