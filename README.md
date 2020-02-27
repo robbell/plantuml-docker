@@ -19,3 +19,9 @@ docker run -v path-to-mount:/source --rm -i robbell/plantuml-docker source/*.pum
 ```
 cat sample.puml | docker run --rm -i robbell/plantuml-docker > output.png
 ```
+
+## Upcoming
+
+- [ ] Include Azure Devops sample tasks
+- [ ] Include more samples for PNG and SVG, and wildcard usage
+- [ ] List the benefits compared to PlantUML Server
