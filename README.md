@@ -20,8 +20,28 @@ docker run -v path-to-mount:/source --rm -i robbell/plantuml-docker source/*.pum
 cat sample.puml | docker run --rm -i robbell/plantuml-docker > output.png
 ```
 
+### Azure DevOps Pipeline
+
+```
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: docker run -v $(Build.Repository.LocalPath)/plantuml:/source --rm -i robbell/plantuml-docker source/*.puml -o ./output
+  displayName: 'Export PlantUML diagrams'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish PlantUML diagrams as artifact'
+  inputs:
+    PathtoPublish: '$(Build.Repository.LocalPath)/plantuml/output'
+    ArtifactName: 'plantuml-output'
+```
+
 ## Upcoming
 
-- [ ] Include Azure Devops sample tasks
+- [x] Include Azure Devops sample tasks
 - [ ] Include more samples for PNG and SVG, and wildcard usage
-- [ ] List the benefits compared to PlantUML Server
+- [ ] List the benefits vs. PlantUML Server
